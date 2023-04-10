@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { ERRORS } from './constants/errors';
 
 export class FileReader {
     /**
@@ -9,7 +10,7 @@ export class FileReader {
      */
     static parse = (filename) => {
         if (!filename) {
-            throw new Error('Filename is required');
+            throw new Error(ERRORS.FILE.NO_FILE_NAME);
         }
         const countryStrings = [];
         const lines = fs.readFileSync(filename).toString().split('\n').map((line) => line.replace('\r', ''));
@@ -37,7 +38,7 @@ export class FileReader {
         }
 
         if (lines[lines.length - 1] !== '0') {
-            throw new Error("Input file must end with '0' line");
+            throw new Error(ERRORS.FILE.FILE_END);
         }
 
         return countryStrings;

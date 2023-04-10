@@ -1,4 +1,5 @@
 import City from './City.js';
+import { ERRORS } from '../constants/errors.js';
 
 const COORDINATES = {
     MIN: 1,
@@ -9,10 +10,10 @@ const MAX_NAME_LENGTH = 25;
 export class Country {
     constructor(name, coordinates) {
         if (!Country.areCoordinatesValid(coordinates)) {
-            throw new Error('Coordinates are invalid');
+            throw new Error(ERRORS.VALIDATION.COORDINATES);
         }
         if (name.length > MAX_NAME_LENGTH) {
-            throw new Error(`Name must be less than ${MAX_NAME_LENGTH} characters`);
+            throw new Error(ERRORS.VALIDATION.COUNTRY_NAME);
         }
         this.cities = [];
         this.name = name;
