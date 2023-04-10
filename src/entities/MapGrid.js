@@ -1,21 +1,5 @@
 import City from './City.js';
-
-class GridDictionary {
-    constructor() {
-        this.map = new Map();
-    }
-    key(coords) {
-        return `${coords.x}-${coords.y}`;
-    }
-    set(coords, value) {
-        const key = this.key(coords);
-        this.map.set(key, value);
-    }
-    get(coords) {
-        const key = this.key(coords);
-        return this.map.get(key);
-    }
-}
+import GridDictionary from './GridDictionary.js';
 
 export class MapGrid {
     countriesGrid = new GridDictionary();
@@ -146,21 +130,6 @@ export class MapGrid {
         });
 
         return result;
-    }
-
-    /**
-     * Convert diffusion result map to string
-     * @param {Map<string, number>} diffusionResult ({ Spain => 382, France => 1325 })
-     * @returns {string} formatted to string diffusion result ("Spain 382\nFrance 1325")
-     */
-    static resultToStringFormatter(diffusionResult) {
-        const results = [];
-
-        for (const [countryName, days] of diffusionResult.entries()) {
-            results.push(`${countryName} ${days}`);
-        }
-
-        return results.join('\n');
     }
 }
 

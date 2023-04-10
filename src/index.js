@@ -1,6 +1,7 @@
 import FileReader from './FileReader.js';
 import MapGrid from './entities/MapGrid.js';
 import Country from './entities/Country.js';
+import { resultToStringFormatter } from './utils/resultFormatter.js';
 
 const processCase = (countriesStrings) => {
     try {
@@ -11,7 +12,7 @@ const processCase = (countriesStrings) => {
         });
         
         const result = new MapGrid(countries).startDiffusionEmulation();
-        const formattedResult = MapGrid.resultToStringFormatter(result);
+        const formattedResult = resultToStringFormatter(result);
 
         console.log(formattedResult);
     } catch (error) {
