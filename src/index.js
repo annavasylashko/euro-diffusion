@@ -1,32 +1,21 @@
-import FileReader from './FileReader.js';
-import MapGrid from './entities/MapGrid.js';
-import Country from './entities/Country.js';
-import { resultToStringFormatter } from './utils/resultFormatter.js';
+import { readFile } from "./file-io/file-io.js";
+import { decode, encode } from "./euro-diffusion/coding.js";
+import { processCase } from "./euro-diffusion/diffusion.js";
 
-const processCase = (countriesStrings) => {
+export const main = () => {
     try {
-        const countries = [];
-
-        countriesStrings.map((countryString) => {
-            countries.push(Country.parseCountryString(countryString));
-        });
-        
-        const result = new MapGrid(countries).startDiffusionEmulation();
-        const formattedResult = resultToStringFormatter(result);
-
-        console.log(formattedResult);
+        const filename = process.argv[2] || 'input.txt'
+        const input = readFile(filename)
+    
+        const cases = decode(input)
+        const resultStates = cases.map(processCase)
+        const resultString = encode(resultStates)
+    
+        console.log(resultString)
+        return resultString
     } catch (error) {
-        console.error(error.toString());
+        console.log(error);
     }
-};
-
-const main = () => {
-    const countryStrings = FileReader.parse('inputFile');
-
-    countryStrings.map((countries, idx) => {
-        console.log(`${idx ? '\n' : ''}Case Number ${idx + 1}`);
-        processCase(countries);
-    });
 };
 
 main();

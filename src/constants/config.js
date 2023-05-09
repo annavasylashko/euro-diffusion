@@ -1,0 +1,9 @@
+const CONFIG = {
+    MAX_COUNTRIES: 20,
+    INITIAL_BALANCE: 1e6,
+    GRID_SIZE: 10,
+    REPRESENTATIVE_PORTION: 1e3,
+    MAX_DAYS: 1e4
+}
+
+export { CONFIG }
