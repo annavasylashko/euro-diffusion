@@ -38,7 +38,10 @@ Input file has the same content as example above:
 
 <img width="497" alt="Screenshot 2023-03-19 at 19 10 20" src="https://user-images.githubusercontent.com/50664700/226194481-4a52d559-c6cc-403a-bed5-5c123d4fc42a.png">
 
-The first console block _(pink)_ represents program **start command** and **results**<br/>
-The second console block _(lavender)_ represents **test command** and **tests cases with results**
+The first console block represents program **start command** and **results**<br/>
 
-<img width="731" alt="Screenshot 2023-03-19 at 18 39 54" src="https://user-images.githubusercontent.com/50664700/226192322-303ae13a-8944-4e9b-af48-c304e26c6581.png">
+<img width="703" alt="Screenshot 2023-05-09 at 20 29 14" src="https://github.com/annavasylashko/euro-diffusion/assets/50664700/2d0f40e5-62a0-4acc-b265-3ae4e8ff485d">
+
+The second console block represents **test command** and **tests cases with results**
+
+<img width="766" alt="Screenshot 2023-05-09 at 20 30 05" src="https://github.com/annavasylashko/euro-diffusion/assets/50664700/ead04312-6306-4379-a2b8-308bfda5fe8b">
