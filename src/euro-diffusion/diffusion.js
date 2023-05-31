@@ -81,8 +81,8 @@ const diffuse = (diffusionCase) => {
     }
 
     for (const city of diffusionCase.cities) {
-        for (const [contry, balance] of Object.entries(city.cachedBalances)) {
-            city.balances[contry] += balance
+        for (const [country, balance] of Object.entries(city.cachedBalances)) {
+            city.balances[country] += balance
         }
 
         city.cachedBalances = {}
